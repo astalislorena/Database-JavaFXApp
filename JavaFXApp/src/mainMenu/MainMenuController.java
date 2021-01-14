@@ -1,6 +1,7 @@
 package mainMenu;
 
 import ConnectionPackage.ConnectionJDBC;
+import JavaObjects.Course;
 import JavaObjects.Student;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -43,13 +44,17 @@ public class MainMenuController {
     public TextField ibanTextField;
     public TextField telephoneNumberTextField;
     public TextField contactNumberTextField;
-    public TableView searchCoursesTableView;
+    //public TableView searchCoursesTableView;
     public Pane enrollStudentAtCousePane;
+    public TextField enrollStudentCourseNameTextField;
+
+    public TextField studyGroupName;
     private Student student;
+    private Course course;
     public void setStudent(Student student) {
         this.student = student;
     }
-
+    public ListView searchCoursesTableView;
 
 
     public void showPersonalData(ActionEvent actionEvent) {
@@ -115,9 +120,25 @@ public class MainMenuController {
         groupEnrollmentPane.setVisible(true);
     }
 
-    public void searchCourses(ActionEvent actionEvent) {
+    public void searchCourses(ActionEvent actionEvent) throws SQLException {
         for (Node child : anchorPanePages.getChildren()) child.setVisible(false);
         searchCoursesPane.setVisible(true);
+
+        for ( int i = 0; i<searchCoursesTableView.getItems().size(); i++) {
+            searchCoursesTableView.getItems().clear();
+        }
+        ConnectionJDBC connectionJDBC = new ConnectionJDBC();
+        ResultSet activities = connectionJDBC.view_search_course_student(this.student.getCnp());
+        searchCoursesTableView.getItems().add("Course Name  ");
+        while(activities.next()) {
+            String isIt;
+            if (activities.getInt(2) == 0)
+                isIt = "false";
+            else isIt = "true";
+            searchCoursesTableView.getItems().add(activities.getString(1) + ", ");
+
+        }
+
     }
 
     public void showStudyGroups(ActionEvent actionEvent) {
@@ -198,6 +219,31 @@ public class MainMenuController {
             e.printStackTrace();
         }
     }
+
+    public void enrollStudentCourse(ActionEvent actionEvent) {
+        ConnectionJDBC connectionJDBC = new ConnectionJDBC();
+        connectionJDBC.enroll_student_course(
+                student.getCnp(),
+                enrollStudentCourseNameTextField.getText()
+        );
+    }
+
+    public void addStudentStudyGroup(ActionEvent actionEvent) {
+        ConnectionJDBC connectionJDBC = new ConnectionJDBC();
+        connectionJDBC.add_student_study_group(
+               student.getCnp(),
+                studyGroupName.getText()
+        );
+    }
+
+    public void deleteStudentStudyGroup(ActionEvent actionEvent) {
+        ConnectionJDBC connectionJDBC = new ConnectionJDBC();
+        connectionJDBC.delete_student_study_group(
+                student.getCnp(),
+                studyGroupName.getText()
+        );
+    }
+
 
     public void enrollAtACourse(ActionEvent actionEvent) {
         for (Node child : anchorPanePages.getChildren()) child.setVisible(false);

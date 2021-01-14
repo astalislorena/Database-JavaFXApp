@@ -50,6 +50,9 @@ public class ProfessorMainMenuController {
     public Pane enrollToACoursePane;
     public TextField courseNameTextField;
 
+    public ListView searchCoursesTableView;
+    public TextField courseRoleTextField;
+
     public void setProfessor(Professor professor) {
         this.professor = professor;
     }
@@ -70,10 +73,23 @@ public class ProfessorMainMenuController {
     }
 
     ///de modificat
-    public void searchCourses(ActionEvent actionEvent) {
+    public void searchCourses(ActionEvent actionEvent) throws SQLException {
         for (Node child : anchorPanePages.getChildren()) child.setVisible(false);
         searchCoursesPane.setVisible(true);
+        for ( int i = 0; i<searchCoursesTableView.getItems().size(); i++) {
+            searchCoursesTableView.getItems().clear();
+        }
+        ConnectionJDBC connectionJDBC = new ConnectionJDBC();
+        ResultSet activities = connectionJDBC.view_search_course_professor(this.professor.getCnp());
+        searchCoursesTableView.getItems().add("Course Name  ");
+        while(activities.next()) {
+            String isIt;
+            if (activities.getInt(2) == 0)
+                isIt = "false";
+            else isIt = "true";
+            searchCoursesTableView.getItems().add(activities.getString(1) + ", ");
 
+        }
 
     }
 
@@ -183,6 +199,15 @@ public class ProfessorMainMenuController {
                     activities.getInt(3) + "        " + activities.getBigDecimal(4));
 
         }
+    }
+
+    public void enrollProfessorCourse(ActionEvent actionEvent) {
+        ConnectionJDBC connectionJDBC = new ConnectionJDBC();
+        connectionJDBC.enroll_professor_role(
+                professor.getCnp(),
+                courseRoleTextField.getText(),
+                courseNameTextField.getText()
+        );
     }
 
 

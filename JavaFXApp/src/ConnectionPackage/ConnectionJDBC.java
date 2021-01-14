@@ -8,7 +8,7 @@ public class ConnectionJDBC {
     String URL = "jdbc:mysql://localhost:3306/";
     String DB_NAME =  "universitydatabase";
     String USER = "root";
-    String PASSWORD = "iipMda13**";
+    String PASSWORD = "Darius7510";
 
     public boolean validate_user(String email, String password) {
         Connection c;
@@ -278,9 +278,7 @@ public class ConnectionJDBC {
             cs.setString( 7,telephoneNumber);
             cs.setString( 8,contactNumber);
             cs.setString( 9,address);
-            c.setAutoCommit(false);
             cs.execute();
-            c.commit();
         } catch (Exception e) {
             System.out.println("SQLException: " + e.getMessage());
             System.out.println("SQLState: " + ((SQLException) e).getSQLState());
@@ -304,9 +302,8 @@ public class ConnectionJDBC {
             cs.setString( 7,telephoneNumber);
             cs.setString( 8,contactNumber);
             cs.setString( 9,address);
-            c.setAutoCommit(false);
             cs.execute();
-            c.commit();
+
         } catch (Exception e) {
             System.out.println("SQLException: " + e.getMessage());
             System.out.println("SQLState: " + ((SQLException) e).getSQLState());
@@ -550,14 +547,13 @@ public class ConnectionJDBC {
     ////////
 
 
-    public void add_study_group(int course_ID,String name,String CNP) {
+    public void add_study_group(int course_ID,String name) {
         Connection c;
         try {
             c = DriverManager.getConnection(URL + DB_NAME, USER, PASSWORD);
-            CallableStatement cs = c.prepareCall("{CALL add_study_group(?,?,?)}");
+            CallableStatement cs = c.prepareCall("{CALL add_study_group(?,?)}");
             cs.setInt(1, course_ID);
             cs.setString(2, name);
-            cs.setString(3, CNP);
             c.setAutoCommit(false);
             cs.execute();
             c.commit();
@@ -568,13 +564,15 @@ public class ConnectionJDBC {
         }
     }
 
-    public void delete_study_group(int course_ID)
+    ///nu merge
+
+    public void delete_study_group(String name)
     {
         Connection c;
         try {
             c = DriverManager.getConnection(URL + DB_NAME, USER, PASSWORD);
             CallableStatement cs = c.prepareCall("{CALL delete_study_group(?)}");
-            cs.setInt( 1,course_ID);
+            cs.setString( 1,name);
             c.setAutoCommit(false);
             cs.execute();
             c.commit();
@@ -585,21 +583,16 @@ public class ConnectionJDBC {
         }
     }
 
-   public StudyGroup search_study_group(int course_Id) {
+
+   public ResultSet search_study_group(String name) {
         Connection c;
         try {
             c = DriverManager.getConnection(URL + DB_NAME, USER, PASSWORD);
             CallableStatement cs = c.prepareCall("{CALL search_study_group(?)}");
-            cs.setInt(1, course_Id);
+            cs.setString(1, name);
             ResultSet resultSet = cs.executeQuery();
-            if (resultSet.next()) {
-                return new StudyGroup(
-                        resultSet.getInt("study_group_ID"),
-                        new Course(),
-                       new Professor(),
-                        resultSet.getString("name")
-                );
-            }
+            return resultSet;
+
         } catch (Exception e) {
             System.out.println("SQLException: " + e.getMessage());
             System.out.println("SQLState: " + ((SQLException) e).getSQLState());
@@ -641,18 +634,15 @@ public class ConnectionJDBC {
     }
 
 
-
-    ///CREATE PROCEDURE enroll_student(cnpUser varchar(13),userFirstName varchar(30), userLastName varchar(30),course_id int)
-    public void enroll_student_course(String cnpUser,String userFirstName,String userLastName,int course_id)
+    //CREATE PROCEDURE enroll_student(cnpUser varchar(13),name varchar(30))
+    public void enroll_student_course(String cnpUser,String name)
     {
         Connection c;
         try {
             c = DriverManager.getConnection(URL + DB_NAME, USER, PASSWORD);
-            CallableStatement cs = c.prepareCall("{CALL enroll_student(?,?,?,?)}");
+            CallableStatement cs = c.prepareCall("{CALL enroll_student(?,?)}");
             cs.setString( 1,cnpUser);
-            cs.setString( 2,userFirstName);
-            cs.setString( 3,userLastName);
-            cs.setInt( 4,course_id);
+            cs.setString( 2,name);
             c.setAutoCommit(false);
             cs.execute();
             c.commit();
@@ -663,17 +653,16 @@ public class ConnectionJDBC {
         }
     }
 
-    ///CREATE PROCEDURE enroll_professor(userFirstName varchar(30), userLastName varchar(30),role varchar(15),course_id int)
-    public void enroll_professor_role(String userFirstName,String userLastName,String role,int course_id)
+    ///CREATE PROCEDURE enroll_professor(cnp varchar(13),role varchar(15),name varchar(30))
+    public void enroll_professor_role(String cnp,String role,String name)
     {
         Connection c;
         try {
             c = DriverManager.getConnection(URL + DB_NAME, USER, PASSWORD);
-            CallableStatement cs = c.prepareCall("{CALL enroll_professor(?,?,?,?)}");
-            cs.setString( 1,userFirstName);
-            cs.setString( 2,userLastName);
-            cs.setString( 3,role);
-            cs.setInt( 4,course_id);
+            CallableStatement cs = c.prepareCall("{CALL enroll_professor(?,?,?)}");
+            cs.setString( 1,cnp);
+            cs.setString( 2,role);
+            cs.setString( 3,name);
             c.setAutoCommit(false);
             cs.execute();
             c.commit();
@@ -684,14 +673,14 @@ public class ConnectionJDBC {
         }
     }
 
-    ///CREATE PROCEDURE add_student_study_group(cnpUser varchar(13),study_group_ID int)
-    public void add_student_study_group(String cnpUser, int study_group_ID) {
+    ///CREATE PROCEDURE add_student_study_group(cnpUser varchar(13),name varchar(30))
+    public void add_student_study_group(String cnp, String name) {
         Connection c;
         try {
             c = DriverManager.getConnection(URL + DB_NAME, USER, PASSWORD);
             CallableStatement cs = c.prepareCall("{CALL add_student_study_group(?,?)}");
-            cs.setString(1, cnpUser);
-            cs.setInt(2, study_group_ID);
+            cs.setString(1, cnp);
+            cs.setString(2, name);
             cs.execute();
         } catch (Exception e) {
             System.out.println("SQLException: " + e.getMessage());
@@ -700,14 +689,14 @@ public class ConnectionJDBC {
         }
     }
 
-    ///CREATE PROCEDURE delete_student_study_group(cnpUser varchar(13),study_group_ID int)
-    public void delete_student_study_group(String cnpUser, int study_group_ID) {
+    ///CREATE PROCEDURE delete_student_study_group(cnpUser varchar(13),name varchar(30))
+    public void delete_student_study_group(String cnp, String name) {
         Connection c;
         try {
             c = DriverManager.getConnection(URL + DB_NAME, USER, PASSWORD);
             CallableStatement cs = c.prepareCall("{CALL delete_student_study_group(?,?)}");
-            cs.setString(1, cnpUser);
-            cs.setInt(2, study_group_ID);
+            cs.setString(1, cnp);
+            cs.setString(2, name);
             c.setAutoCommit(false);
             cs.execute();
             c.commit();

@@ -96,7 +96,7 @@
                <children>
                   <Label fx:id="manageStudyGroupsLabel" layoutX="45.0" layoutY="87.0" text="Study group" />
                   <TextField fx:id="studyGroupForCourseTextField" layoutX="45.0" layoutY="178.0" prefHeight="25.0" prefWidth="214.0" promptText="Course ID " />
-                  <Button fx:id="searchCourseByID" layoutX="335.0" layoutY="178.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="126.0" text="Search" />
+                  <Button fx:id="searchCourseByID" layoutX="335.0" layoutY="178.0" mnemonicParsing="false" onAction="#searchStudyGroupById" prefHeight="25.0" prefWidth="126.0" text="Search" />
                   <Button fx:id="deleteStudyGroupButton" layoutX="335.0" layoutY="221.0" mnemonicParsing="false" onAction="#deleteStudyGroup" prefHeight="25.0" prefWidth="126.0" text="Delete study group" />
                   <Button fx:id="addStudyGroupButton" layoutX="336.0" layoutY="260.0" mnemonicParsing="false" onAction="#addStudyGroup" prefHeight="25.0" prefWidth="126.0" text="Add study group" />
                   <Pane fx:id="manageStudyGroupsImagePane" layoutX="55.0" layoutY="312.0" prefHeight="542.0" prefWidth="810.0" />

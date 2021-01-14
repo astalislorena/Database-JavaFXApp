@@ -15,6 +15,8 @@ import javafx.stage.Stage;
 import sample.Main;
 
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Objects;
 
 public class AdminMainMenuController {
@@ -64,6 +66,7 @@ public class AdminMainMenuController {
     public TextField maxNrOfStudentsTextField;
     public TextField studyGroupForCourseTextField;
     public TextField doesCourseHaveStudyGroupTextField;
+    private Course course;
 
     private Admin admin;
 
@@ -164,7 +167,7 @@ public class AdminMainMenuController {
         professorContactNumberTextField.setText(person.getContact_number());
         professorTelephoneNumberTextField.setText(person.getTelephone_number());
         professorAddressTextField.setText(person.getAddress());
-        professorDepartmentTextField.setText(connectionJDBC.get_professor_department(person.getCnp()));
+        professorDepartmentTextField.setText(connectionJDBC.get_professor_department(professorCNPTextField.getText()));
     }
     public void clearProfessorData(ActionEvent actionEvent) {
         professorCNPTextField.clear();
@@ -189,7 +192,7 @@ public class AdminMainMenuController {
         professorContactNumberTextField.setText(person.getContact_number());
         professorTelephoneNumberTextField.setText(person.getTelephone_number());
         professorAddressTextField.setText(person.getAddress());
-        professorDepartmentTextField.setText(connectionJDBC.get_professor_department(person.getCnp()));
+        professorDepartmentTextField.setText(connectionJDBC.get_professor_department(professorCNPTextField.getText()));
     }
     public void addProfessor(ActionEvent actionEvent) {
         ConnectionJDBC connectionJDBC = new ConnectionJDBC();
@@ -268,16 +271,16 @@ public class AdminMainMenuController {
 
     public void updateProfessor(ActionEvent actionEvent){
         ConnectionJDBC connectionJDBC = new ConnectionJDBC();
-        connectionJDBC.update_professor(studentCNPTextField.getText(),
-                studentsFirstNameTextField.getText(),
-                studentLastNameTextField.getText(),
-                studentEmailTextField.getText(),
-                studentPasswordTextField.getText(),
-                studentIBANTextField.getText(),
-                studentTelephoneNumberTextField.getText(),
-                studentContactNumberTextField.getText(),
-                studentAddressTextField.getText());
-
+        connectionJDBC.update_professor(professorCNPTextField.getText(),
+                professorFirstNameTextField.getText(),
+                professorLastNameTextField.getText(),
+                professorEmailTextField.getText(),
+                professorPasswordTextField.getText(),
+                professorIBANTextField.getText(),
+                professorTelephoneNumberTextField.getText(),
+                professorContactNumberTextField.getText(),
+                professorAddressTextField.getText());
+                professorDepartmentTextField.setText(connectionJDBC.get_professor_department(professorCNPTextField.getText()));
     }
     public void updateAdmin(ActionEvent actionEvent){
         ConnectionJDBC connectionJDBC = new ConnectionJDBC();
@@ -301,7 +304,7 @@ public class AdminMainMenuController {
     public void deleteProfessor(ActionEvent actionEvent)
     {
         ConnectionJDBC connectionJDBC = new ConnectionJDBC();
-        connectionJDBC.delete_professor(studentCNPTextField.getText());
+        connectionJDBC.delete_professor(professorCNPTextField.getText());
     }
 
     public void deleteAdmin(ActionEvent actionEvent)
@@ -350,22 +353,25 @@ public class AdminMainMenuController {
     public void deleteStudyGroup(ActionEvent actionEvent)
     {
         ConnectionJDBC connectionJDBC = new ConnectionJDBC();
-        connectionJDBC.delete_study_group(Integer.parseInt(studyGroupForCourseTextField.getText()));
+        connectionJDBC.delete_study_group(doesCourseHaveStudyGroupTextField.getText());
     }
 
     public void addStudyGroup(ActionEvent actionEvent) {
         ConnectionJDBC connectionJDBC = new ConnectionJDBC();
-//        connectionJDBC.add_study_group(
-//              integerId =  Integer.parseInt(studyGroupForCourseTextField.getText()),
-//              doesCourseHaveStudyGroupTextField.getText()
-//        );
+        connectionJDBC.add_study_group(
+             integerId =  Integer.parseInt(studyGroupForCourseTextField.getText()),
+             doesCourseHaveStudyGroupTextField.getText()
+        );
     }
 
-    public void searchStudyGroupById(ActionEvent actionEvent) {
+    public void searchStudyGroupById(ActionEvent actionEvent) throws SQLException {
         ConnectionJDBC connectionJDBC = new ConnectionJDBC();
-        StudyGroup studyGroup = connectionJDBC.search_study_group( Integer.parseInt(studyGroupForCourseTextField.getText()));
+        ResultSet studyGroup = connectionJDBC.search_study_group(doesCourseHaveStudyGroupTextField.getText() );
 
-        doesCourseHaveStudyGroupTextField.setText(studyGroup.getName());
+                if(studyGroup.next())
+                {
+                    studyGroupForCourseTextField.setText(studyGroup.getString("course_ID"));
+                }
     }
 
     ////-----------

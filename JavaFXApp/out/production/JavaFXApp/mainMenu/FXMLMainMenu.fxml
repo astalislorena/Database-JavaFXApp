@@ -53,21 +53,17 @@
             </Pane>
             <Pane fx:id="groupEnrollmentPane" layoutX="5.0" layoutY="6.0" prefHeight="924.0" prefWidth="898.0" stylesheets="@mainMenuStylesheet.css" visible="false">
                <children>
-                  <TextField alignment="CENTER" layoutX="567.0" layoutY="351.0" prefHeight="25.0" prefWidth="207.0" promptText="Group name" stylesheets="@mainMenuStylesheet.css" />
-                  <Button layoutX="615.0" layoutY="389.0" mnemonicParsing="false" stylesheets="@mainMenuStylesheet.css" text="Enroll" />
+                  <TextField fx:id="studyGroupName" alignment="CENTER" layoutX="567.0" layoutY="351.0" prefHeight="25.0" prefWidth="207.0" promptText="Group name" stylesheets="@mainMenuStylesheet.css" />
+                  <Button layoutX="615.0" layoutY="389.0" mnemonicParsing="false" onAction="#addStudentStudyGroup" stylesheets="@mainMenuStylesheet.css" text="Enroll" />
                   <Pane fx:id="groupEnrollImagePane" layoutX="20.0" layoutY="183.0" prefHeight="487.0" prefWidth="506.0" stylesheets="@mainMenuStylesheet.css" />
                   <Label fx:id="groupEnrollmentLabel" layoutX="496.0" layoutY="199.0" stylesheets="@mainMenuStylesheet.css" text="Study Group" />
-                  <Button fx:id="unrollFromAStudyGroupButon" layoutX="690.0" layoutY="389.0" mnemonicParsing="false" text="Unroll" />
+                  <Button fx:id="unrollFromAStudyGroupButon" layoutX="690.0" layoutY="389.0" mnemonicParsing="false" onAction="#deleteStudentStudyGroup" text="Unroll" />
                </children>
             </Pane>
             <Pane fx:id="searchCoursesPane" layoutX="2.0" layoutY="3.0" prefHeight="930.0" prefWidth="905.0" stylesheets="@mainMenuStylesheet.css" visible="false">
                <children>
                   <Label fx:id="searchCoursesLabel" layoutX="73.0" layoutY="57.0" stylesheets="@mainMenuStylesheet.css" text="Search courses" />
-                  <TableView fx:id="searchCoursesTableView" layoutX="73.0" layoutY="144.0" prefHeight="734.0" prefWidth="232.0" stylesheets="@mainMenuStylesheet.css">
-                    <columns>
-                      <TableColumn fx:id="tableViewCourseName" prefWidth="231.0" text="Course name" />
-                    </columns>
-                  </TableView>
+                  <ListView fx:id="searchCoursesTableView" layoutX="73.0" layoutY="144.0" prefHeight="734.0" prefWidth="232.0" />
                   <Pane fx:id="searchCoursesImagePane" layoutX="323.0" layoutY="153.0" prefHeight="716.0" prefWidth="551.0" stylesheets="@mainMenuStylesheet.css" />
                </children>
             </Pane>
@@ -111,7 +107,7 @@
             <Pane fx:id="enrollStudentAtCousePane" layoutY="-16.0" prefHeight="988.0" prefWidth="992.0" stylesheets="@mainMenuStylesheet.css" visible="false">
                <children>
                   <TextField fx:id="enrollStudentCourseNameTextField" layoutX="75.0" layoutY="166.0" promptText="Course name" />
-                  <Button layoutX="249.0" layoutY="166.0" mnemonicParsing="false" text="Enroll" />
+                  <Button layoutX="249.0" layoutY="166.0" mnemonicParsing="false" onAction="#enrollStudentCourse" text="Enroll" />
                   <Label fx:id="entollStudentCourseLabel" layoutX="89.0" layoutY="128.0" prefHeight="17.0" prefWidth="101.0" stylesheets="@mainMenuStylesheet.css" text="Enroll in a course" />
                   <Pane fx:id="entollStudentCourseImagePane" layoutX="270.0" layoutY="316.0" prefHeight="464.0" prefWidth="499.0" stylesheets="@mainMenuStylesheet.css"/>
                </children>
