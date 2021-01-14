@@ -1,0 +1,133 @@
+#defaultPane {
+    -fx-background-image: url("../images/undraw_Meeting_re_i53h.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+.button {
+    -fx-background-color: #897d84;
+    -fx-text-fill: #e8acac;
+}
+.button:focused {
+    -fx-background-color: #e8acac;
+    -fx-text-fill: #897d84;
+}
+#personalDataImagePane {
+    -fx-background-image: url("../images/undraw_profile_6l1l.png");
+    -fx-background-position: center;
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+}
+
+#anchorPane {
+    -fx-background-color: white;
+}
+
+#iconPane {
+    -fx-background-image: url("../images/undraw_education_f8ru.png");
+    -fx-background-position: center;
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+}
+
+#personalDataLabel {
+    -fx-text-fill: #e4647d;
+    -fx-font-size: 50px;
+    -fx-font-family: "Roboto Light";
+    -fx-alignment: center;
+}
+
+
+#scheduleAnActivityLabel {
+    -fx-text-fill: #e4647d;
+    -fx-font-size: 50px;
+    -fx-font-family: "Roboto Light";
+    -fx-alignment: center;
+}
+
+#scheduleAnActivityImagePane {
+    -fx-background-image: url("../images/undraw_developer_activity_bv83.png");
+    -fx-background-position: center;
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+
+}
+
+#searchCoursesLabel {
+    -fx-text-fill: #e4647d;
+    -fx-font-size: 50px;
+    -fx-font-family: "Roboto Light";
+}
+
+#searchCoursesImagePane {
+    -fx-background-image: url("../images/undraw_mathematics_4otb.png");
+    -fx-background-position: center;
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+}
+
+#studyGroupsLabel {
+    -fx-text-fill: #e4647d;
+    -fx-font-family: "Roboto Light";
+}
+#studyGroupsRecomendedLabel {
+    -fx-text-fill: #e4647d;
+    -fx-font-family: "Roboto Light";
+}
+
+#studyGroupImagePane {
+    -fx-background-image: url("../images/undraw_exams_g4ow.png");
+    -fx-background-position: center;
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+}
+
+#gradesImagePane {
+    -fx-background-image: url("../images/undraw_building_blocks_n0nc.png");
+    -fx-background-position: center;
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+}
+
+#listAllStudentsLabel {
+    -fx-text-fill: #e4647d;
+    -fx-font-size: 50px;
+    -fx-font-family: "Roboto Light";
+    -fx-alignment: center;
+}
+
+#listAllStudentsImagePane {
+    -fx-background-image: url("../images/undraw_my_documents_ym8x.png");
+    -fx-background-position: center;
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+}
+
+#listAllGradesLabel {
+    -fx-text-fill: #e4647d;
+    -fx-font-size: 50px;
+    -fx-font-family: "Roboto Light";
+    -fx-alignment: center;
+}
+
+#listAllGradesImagePane {
+    -fx-background-image: url("../images/undraw_To_do_list_re_9nt7.png");
+    -fx-background-position: center;
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+}
+
+.label, #addGardeLabel, #allGradesWeightLabel {
+    -fx-text-fill: #e4647d;
+    -fx-font-size: 20px;
+    -fx-font-family: "Roboto Light";
+    -fx-alignment: center;
+
+}
+
+#enrollProfessorToACoursePane {
+    -fx-background-image: url("../images/undraw_quiz_nlyh.png");
+    -fx-background-position: center;
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+}

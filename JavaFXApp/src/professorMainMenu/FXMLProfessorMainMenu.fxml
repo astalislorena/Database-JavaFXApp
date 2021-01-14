@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="professorMainMenu.ProfessorMainMenuController">
+        <children>
+            <AnchorPane fx:id="anchorPanePages" layoutX="207.0" layoutY="-11.0" prefHeight="905.0" prefWidth="898.0" style="-fx-background-color: #ffffff;">
+                <children>
+                    <Pane fx:id="todaysActivitiesPane" layoutY="11.0" prefHeight="913.0" prefWidth="898.0" visible="false">
+               <children>
+                  <ListView fx:id="tableviewTodayActivities" layoutX="74.0" layoutY="61.0" prefHeight="680.0" prefWidth="760.0" />
+                  <Button fx:id="downloadTodayActivitiesButton" layoutX="681.0" layoutY="770.0" mnemonicParsing="false" onAction="#downloadTodayActivitiesProfessor" prefHeight="25.0" prefWidth="153.0" stylesheets="@professorMainMenuStylesheet.css" text="Download activities" />
+               </children>
+                    </Pane>
+                    <StackPane fx:id="defaultPane" disable="true" prefHeight="916.0" prefWidth="916.0" stylesheets="@professorMainMenuStylesheet.css" />
+                    <Pane fx:id="personalDataPane" cache="true" prefHeight="916.0" prefWidth="898.0" stylesheets="@professorMainMenuStylesheet.css" visible="false">
+                        <children>
+                            <TextField fx:id="emailTextField" layoutX="447.0" layoutY="276.0" prefHeight="25.0" prefWidth="317.0" stylesheets="@professorMainMenuStylesheet.css" />
+                            <Label fx:id="emailLabel" layoutX="449.0" layoutY="246.0" prefHeight="30.0" prefWidth="83.0" stylesheets="@professorMainMenuStylesheet.css" text="Email" />
+                            <TextField fx:id="firstNameTextField" layoutX="447.0" layoutY="339.0" prefHeight="25.0" prefWidth="317.0" stylesheets="@professorMainMenuStylesheet.css" />
+                            <Label fx:id="firstNameLabel" layoutX="444.0" layoutY="309.0" prefHeight="30.0" prefWidth="127.0" stylesheets="@professorMainMenuStylesheet.css" text="First Name" />
+                            <TextField fx:id="lastNameTextField" layoutX="447.0" layoutY="398.0" prefHeight="25.0" prefWidth="317.0" stylesheets="@professorMainMenuStylesheet.css" />
+                            <Label fx:id="lastNameLabel" layoutX="450.0" layoutY="368.0" prefHeight="30.0" prefWidth="104.0" stylesheets="@professorMainMenuStylesheet.css" text="Last Name" />
+                            <TextField fx:id="cnpTextField" layoutX="447.0" layoutY="454.0" prefHeight="25.0" prefWidth="317.0" stylesheets="@professorMainMenuStylesheet.css" />
+                            <Label fx:id="cnpLabel" layoutX="447.0" layoutY="423.0" prefHeight="17.0" prefWidth="67.0" stylesheets="@professorMainMenuStylesheet.css" text="CNP" />
+                            <TextField fx:id="addressTextField" layoutX="448.0" layoutY="514.0" prefHeight="25.0" prefWidth="317.0" stylesheets="@professorMainMenuStylesheet.css" />
+                            <Label fx:id="addressLabel" layoutX="439.0" layoutY="487.0" prefHeight="30.0" prefWidth="104.0" stylesheets="@professorMainMenuStylesheet.css" text="Address" />
+                            <TextField fx:id="ibanTextField" layoutX="448.0" layoutY="577.0" prefHeight="25.0" prefWidth="317.0" stylesheets="@professorMainMenuStylesheet.css" />
+                            <Label fx:id="ibanLabel" layoutX="447.0" layoutY="547.0" prefHeight="17.0" prefWidth="67.0" stylesheets="@professorMainMenuStylesheet.css" text="IBAN" />
+                            <TextField fx:id="telephoneNumberTextField" layoutX="448.0" layoutY="636.0" prefHeight="25.0" prefWidth="317.0" stylesheets="@professorMainMenuStylesheet.css" />
+                            <Label fx:id="telephoneNumberLabel" layoutX="434.0" layoutY="602.0" prefHeight="30.0" prefWidth="219.0" stylesheets="@professorMainMenuStylesheet.css" text="Telephone number" />
+                            <TextField fx:id="contactNumberTextField" layoutX="448.0" layoutY="692.0" prefHeight="25.0" prefWidth="317.0" stylesheets="@professorMainMenuStylesheet.css" />
+                            <Label fx:id="contactNumberLabel" layoutX="452.0" layoutY="661.0" prefHeight="30.0" prefWidth="161.0" stylesheets="@professorMainMenuStylesheet.css" text="Contact number" />
+                            <Pane fx:id="personalDataImagePane" layoutX="-2.0" layoutY="140.0" prefHeight="724.0" prefWidth="449.0" stylesheets="@professorMainMenuStylesheet.css">
+                                <Label fx:id="personalDataLabel" layoutX="410.0" layoutY="23.0" stylesheets="@professorMainMenuStylesheet.css" text="Personal data" />
+
+                            </Pane>
+                        </children>
+                    </Pane>
+                    <Pane fx:id="allActivitiesPane" prefHeight="913.0" prefWidth="898.0" stylesheets="@professorMainMenuStylesheet.css" visible="false">
+               <children>
+                  <ListView fx:id="tableViewAllActivities" layoutX="66.0" layoutY="66.0" prefHeight="668.0" prefWidth="727.0" />
+                   <Button fx:id="downloadFutureActivitiesButton" layoutX="640.0" layoutY="753.0" mnemonicParsing="false" onAction="#downloadFutureActivitiesProfessor" prefHeight="25.0" prefWidth="153.0" stylesheets="@professorMainMenuStylesheet.css" text="Download activities" />
+               </children>
+                    </Pane>
+                    <Pane fx:id="scheduleAnActivityPane" layoutY="6.0" prefHeight="924.0" prefWidth="916.0" stylesheets="@professorMainMenuStylesheet.css" visible="false">
+                        <children>
+                            <Button fx:id="addScgeduledActivityButton" layoutX="637.0" layoutY="460.0" mnemonicParsing="false" stylesheets="@professorMainMenuStylesheet.css" text="Schedule" />
+                            <Pane fx:id="scheduleAnActivityImagePane" layoutX="24.0" layoutY="229.0" prefHeight="487.0" prefWidth="491.0" stylesheets="@professorMainMenuStylesheet.css" />
+                            <Label fx:id="scheduleAnActivityLabel" layoutX="452.0" layoutY="140.0" stylesheets="@professorMainMenuStylesheet.css" text="Schedule an activity" />
+                  <DatePicker fx:id="scheduleAnActivityDatePicker" layoutX="583.0" layoutY="229.0" promptText="Pick a date" />
+                  <TextField fx:id="courseIDTextField" layoutX="583.0" layoutY="277.0" prefHeight="25.0" prefWidth="174.0" promptText="For course (course id)" />
+                  <TextField fx:id="activityTypeTextField" layoutX="582.0" layoutY="319.0" prefHeight="25.0" prefWidth="174.0" promptText="Type" />
+                  <TextField fx:id="isGradedScheduleActivityTextField" layoutX="582.0" layoutY="363.0" prefHeight="25.0" prefWidth="174.0" promptText="is graded? yes/no" />
+                  <TextField fx:id="gradeWeightTextField" layoutX="583.0" layoutY="407.0" prefHeight="25.0" prefWidth="174.0" promptText="Grade weight" />
+                        </children>
+                    </Pane>
+                    <Pane fx:id="searchCoursesPane" layoutX="-3.0" layoutY="3.0" prefHeight="930.0" prefWidth="905.0" stylesheets="@professorMainMenuStylesheet.css" visible="false">
+                        <children>
+                            <Label fx:id="searchCoursesLabel" layoutX="73.0" layoutY="57.0" stylesheets="@professorMainMenuStylesheet.css" text="Search courses" />
+                            <TableView fx:id="searchCoursesTableView" layoutX="73.0" layoutY="137.0" prefHeight="740.0" prefWidth="259.0" stylesheets="@professorMainMenuStylesheet.css">
+                                <columns>
+                                    <TableColumn prefWidth="258.0" text="Course name" />
+                                </columns>
+                            </TableView>
+                            <Pane fx:id="searchCoursesImagePane" layoutX="349.0" layoutY="153.0" prefHeight="716.0" prefWidth="525.0" stylesheets="@professorMainMenuStylesheet.css" />
+                        </children>
+                    </Pane>
+                    <Pane fx:id="studyGroupPane" layoutX="-3.0" layoutY="11.0" prefHeight="933.0" prefWidth="905.0" stylesheets="@professorMainMenuStylesheet.css" visible="false">
+                        <children>
+                            <ListView fx:id="recommendedStudyGroupList" layoutX="36.0" layoutY="68.0" prefHeight="236.0" prefWidth="271.0" stylesheets="@professorMainMenuStylesheet.css" />
+                            <Label fx:id="studyGroupsRecomendedLabel" layoutX="14.0" layoutY="38.0" prefHeight="30.0" prefWidth="375.0" stylesheets="@professorMainMenuStylesheet.css" text="Recommended study groups for you" />
+                            <Label fx:id="studyGroupsLabel" layoutX="36.0" layoutY="322.0" stylesheets="@professorMainMenuStylesheet.css" text="All study groups" />
+                            <ListView fx:id="studyGroupsList" layoutX="36.0" layoutY="352.0" prefHeight="383.0" prefWidth="271.0" stylesheets="@professorMainMenuStylesheet.css" />
+                            <Pane fx:id="studyGroupImagePane" layoutX="370.0" layoutY="133.0" prefHeight="642.0" prefWidth="491.0" stylesheets="@professorMainMenuStylesheet.css" />
+                        </children>
+                    </Pane>
+                    <Pane fx:id="groupMessagesPane" layoutY="11.0" prefHeight="944.0" prefWidth="928.0" stylesheets="@professorMainMenuStylesheet.css" visible="false">
+                        <children>
+                            <TextField fx:id="messageTextField" alignment="TOP_LEFT" layoutX="56.0" layoutY="623.0" prefHeight="216.0" prefWidth="760.0" promptText="Type message" stylesheets="@professorMainMenuStylesheet.css" />
+                            <Button fx:id="messageSendButton" layoutX="827.0" layoutY="623.0" mnemonicParsing="false" stylesheets="@professorMainMenuStylesheet.css" text="Send" />
+                            <TableView fx:id="messagesTableView" layoutX="56.0" layoutY="87.0" prefHeight="510.0" prefWidth="760.0" stylesheets="@professorMainMenuStylesheet.css">
+                                <columns>
+                                    <TableColumn prefWidth="146.0" text="Who sent it?" />
+                                    <TableColumn prefWidth="515.0" text="Message" />
+                                    <TableColumn minWidth="0.0" prefWidth="98.0" text="Time" />
+                                </columns>
+                            </TableView>
+                            <Button fx:id="messageConnectToGroupButton" layoutX="222.0" layoutY="22.0" mnemonicParsing="false" stylesheets="@professorMainMenuStylesheet.css" text="Connect" />
+                            <TextField fx:id="messageGroupTextField" layoutX="60.0" layoutY="22.0" promptText="Group name" stylesheets="@professorMainMenuStylesheet.css" />
+                        </children>
+                    </Pane>
+                    <Pane fx:id="gradesPane" layoutX="-4.0" prefHeight="955.0" prefWidth="916.0" stylesheets="@professorMainMenuStylesheet.css" visible="false">
+                        <children>
+                            <Pane fx:id="gradesImagePane" layoutX="399.0" layoutY="139.0" prefHeight="584.0" prefWidth="477.0" stylesheets="@professorMainMenuStylesheet.css" />
+                            <TextField layoutX="82.0" layoutY="177.0" promptText="Student CNP" />
+                            <Label fx:id="addGardeLabel" layoutX="82.0" layoutY="130.0" text="Add grade" />
+                            <TextField layoutX="82.0" layoutY="229.0" promptText="Grade" />
+                            <Button layoutX="271.0" layoutY="229.0" mnemonicParsing="false" text="Add grade" />
+                            <ListView layoutX="71.0" layoutY="397.0" prefHeight="366.0" prefWidth="327.0" />
+                            <Label fx:id="allGradesWeightLabel" layoutX="71.0" layoutY="362.0" text="All grade weights" />
+                        </children>
+                    </Pane>
+                    <Pane fx:id="listAllStudentsPane" prefHeight="955.0" prefWidth="916.0" stylesheets="@professorMainMenuStylesheet.css" visible="false">
+               <children>
+                  <ListView layoutX="30.0" layoutY="87.0" prefHeight="791.0" prefWidth="337.0" />
+                  <Label fx:id="listAllStudentsLabel" layoutX="30.0" layoutY="14.0" text="All students" />
+                  <Pane fx:id="listAllStudentsImagePane" layoutX="427.0" layoutY="276.0" prefHeight="434.0" prefWidth="463.0" />
+               </children>
+            </Pane>
+                    <Pane fx:id="listAllGradedGradesPane" layoutX="4.0" layoutY="6.0" prefHeight="944.0" prefWidth="916.0" stylesheets="@professorMainMenuStylesheet.css" visible="false">
+               <children>
+                  <Label fx:id="listAllGradesLabel" layoutX="63.0" layoutY="23.0" text="All grades" />
+                  <ListView fx:id="listAllGradesListView" layoutX="63.0" layoutY="96.0" prefHeight="750.0" prefWidth="359.0" />
+                   <Button fx:id="downloadGradeBookProfessorButton" layoutX="681.0" layoutY="770.0" mnemonicParsing="false" onAction="#downloadGradeBookProfessor" prefHeight="25.0" prefWidth="153.0" stylesheets="@professorMainMenuStylesheet.css" text="Download grade book" />
+                  <Pane fx:id="listAllGradesImagePane" layoutX="494.0" layoutY="281.0" prefHeight="383.0" prefWidth="375.0" />
+               </children>
+            </Pane>
+            <Pane fx:id="enrollToACoursePane" layoutY="6.0" prefHeight="955.0" prefWidth="928.0" visible="false">
+               <children>
+                  <TextField fx:id="courseNameTextField" layoutX="75.0" layoutY="186.0" prefHeight="25.0" prefWidth="196.0" promptText="Course name" />
+                  <Label layoutX="75.0" layoutY="110.0" prefHeight="38.0" prefWidth="174.0" stylesheets="@professorMainMenuStylesheet.css" text="Enroll to a course" />
+                  <TextField layoutX="75.0" layoutY="231.0" prefHeight="25.0" prefWidth="196.0" promptText="Role" />
+                  <Button fx:id="enrollToAcourseButton" layoutX="75.0" layoutY="282.0" mnemonicParsing="false" stylesheets="@professorMainMenuStylesheet.css" text="Enroll" />
+                  <Pane fx:id="enrollProfessorToACoursePane" layoutX="386.0" layoutY="269.0" prefHeight="448.0" prefWidth="443.0" stylesheets="@professorMainMenuStylesheet.css" />
+               </children>
+            </Pane>
+                </children>
+            </AnchorPane>
+            <Pane prefHeight="908.0" prefWidth="207.0" style="-fx-background-color: white;" stylesheets="@professorMainMenuStylesheet.css">
+                <children>
+                    <Button layoutX="3.0" layoutY="208.0" mnemonicParsing="false" onAction="#showPersonalData" prefHeight="46.0" prefWidth="202.0" styleClass="buttons" text="Personal data" />
+                    <Button layoutX="3.0" layoutY="254.0" mnemonicParsing="false" onAction="#showTodaysActivities" prefHeight="46.0" prefWidth="202.0" styleClass="buttons" text="Today's activities" />
+                    <Button layoutX="3.0" layoutY="300.0" mnemonicParsing="false" onAction="#showAllActivities" prefHeight="46.0" prefWidth="202.0" styleClass="buttons" text="Show all activities" />
+                    <Button layoutX="3.0" layoutY="346.0" mnemonicParsing="false" onAction="#scheduleAnActivity" prefHeight="46.0" prefWidth="202.0" styleClass="buttons" text="Schedule an activity" />
+                    <Button layoutX="3.0" layoutY="392.0" mnemonicParsing="false" onAction="#searchCourses" prefHeight="46.0" prefWidth="202.0" styleClass="buttons" text="Search courses" />
+                    <Button layoutX="3.0" layoutY="714.0" mnemonicParsing="false" onAction="#logout" prefHeight="46.0" prefWidth="202.0" styleClass="buttons" text="Logout" />
+                    <Button layoutX="3.0" layoutY="530.0" mnemonicParsing="false" onAction="#showGrades" prefHeight="46.0" prefWidth="202.0" styleClass="buttons" text="Grades" />
+                    <Button layoutX="3.0" layoutY="438.0" mnemonicParsing="false" onAction="#showStudyGroups" prefHeight="46.0" prefWidth="202.0" styleClass="buttons" text="Study groups" />
+                    <Button layoutX="3.0" layoutY="484.0" mnemonicParsing="false" onAction="#messageGroup" prefHeight="46.0" prefWidth="202.0" styleClass="buttons" text="Send message to a group" />
+                    <Pane fx:id="iconPane" layoutY="-5.0" prefHeight="207.0" prefWidth="207.0" style="-fx-background-color: white;" />
+                    <Button layoutX="3.0" layoutY="576.0" mnemonicParsing="false" onAction="#showAllStudents" prefHeight="46.0" prefWidth="202.0" styleClass="buttons" text="List all students" />
+                    <Button layoutX="3.0" layoutY="622.0" mnemonicParsing="false" onAction="#listAllGradedGrades" prefHeight="46.0" prefWidth="202.0" styleClass="buttons" text="List all grades" />
+                     <Button fx:id="enrollToCourseButton" layoutX="3.0" layoutY="668.0" mnemonicParsing="false" onAction="#enrollToACourse" prefHeight="46.0" prefWidth="202.0" styleClass="buttons" text="Enroll to a course" />
+                </children>
+            </Pane>
+        </children>
+    </AnchorPane>

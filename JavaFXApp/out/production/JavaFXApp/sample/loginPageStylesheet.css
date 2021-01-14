@@ -1,0 +1,38 @@
+#loginImagePane {
+    -fx-background-image: url("../images/undraw_Online_learning_re_qw08.png");
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+
+#anchorPane {
+    -fx-background-color: #ffffff;
+}
+
+#passwordTextField, #emailTextField {
+    -fx-background-color: #91949e;
+    -fx-prompt-text-fill: #dedede;
+}
+
+#loginLabel {
+    -fx-text-fill: #e4647d;
+    -fx-font-size: 50px;
+    -fx-font-family: "Roboto Light";
+}
+
+#signInButton {
+    -fx-background-color: #e4647d;
+    -fx-text-fill: #fbbbbb;
+    -fx-padding: 20px;
+    -fx-cursor: hand;
+}
+
+#signInButton:hover {
+    -fx-background-color: #e8acac;
+    -fx-text-fill: #e4647d;
+}
+
+#errorMessage {
+    -fx-text-fill: #e4647d;
+    -fx-font-family: "Roboto Light";
+}
+

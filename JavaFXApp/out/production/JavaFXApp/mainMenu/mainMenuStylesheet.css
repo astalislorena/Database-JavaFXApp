@@ -1,0 +1,94 @@
+#defaultPane {
+    -fx-background-image: url("../images/undraw_Meeting_re_i53h.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+.button {
+    -fx-background-color: #897d84;
+    -fx-text-fill: #e8acac;
+}
+.button:focused {
+    -fx-background-color: #e8acac;
+    -fx-text-fill: #897d84;
+}
+#personalDataImagePane {
+    -fx-background-image: url("../images/undraw_profile_6l1l.png");
+    -fx-background-position: center;
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+}
+
+#anchorPane {
+    -fx-background-color: white;
+}
+
+#iconPane {
+    -fx-background-image: url("../images/undraw_education_f8ru.png");
+    -fx-background-position: center;
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+}
+
+#personalDataLabel {
+    -fx-text-fill: #e4647d;
+    -fx-font-size: 50px;
+    -fx-font-family: "Roboto Light";
+    -fx-alignment: center;
+}
+
+#groupEnrollImagePane {
+    -fx-background-image: url("../images/undraw_group_selfie_ijc6.png");
+    -fx-background-position: center;
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+}
+
+#groupEnrollmentLabel {
+    -fx-text-fill: #e4647d;
+    -fx-font-size: 50px;
+    -fx-font-family: "Roboto Light";
+    -fx-alignment: center;
+}
+
+#searchCoursesLabel {
+    -fx-text-fill: #e4647d;
+    -fx-font-size: 50px;
+    -fx-font-family: "Roboto Light";
+}
+
+#searchCoursesImagePane {
+    -fx-background-image: url("../images/undraw_mathematics_4otb.png");
+    -fx-background-position: center;
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+}
+
+#studyGroupsLabel {
+    -fx-text-fill: #e4647d;
+    -fx-font-family: "Roboto Light";
+}
+#studyGroupsRecomendedLabel, #entollStudentCourseLabel {
+    -fx-text-fill: #e4647d;
+    -fx-font-family: "Roboto Light";
+}
+
+#studyGroupImagePane {
+    -fx-background-image: url("../images/undraw_exams_g4ow.png");
+    -fx-background-position: center;
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+}
+
+#gradesImagePane {
+    -fx-background-image: url("../images/undraw_building_blocks_n0nc.png");
+    -fx-background-position: center;
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+}
+#entollStudentCourseImagePane {
+    -fx-background-image: url("../images/undraw_shared_workspace_hwky.png");
+    -fx-background-position: center;
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+}

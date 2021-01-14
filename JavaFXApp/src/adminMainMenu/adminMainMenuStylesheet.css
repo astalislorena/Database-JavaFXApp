@@ -1,0 +1,63 @@
+#defaultPane {
+    -fx-background-image: url("../images/undraw_Meeting_re_i53h.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#iconPane {
+    -fx-background-image: url("../images/undraw_education_f8ru.png");
+    -fx-background-position: center;
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+}
+
+.button {
+    -fx-background-color: #897d84;
+    -fx-text-fill: #e8acac;
+}
+.button:focused {
+    -fx-background-color: #e8acac;
+    -fx-text-fill: #897d84;
+}
+
+#manageAdminsLabel, #manageCoursesLabel, #manageProfessorsLabel, #manageStudentsLabel, #manageStudyGroupsLabel {
+    -fx-text-fill: #e4647d;
+    -fx-font-size: 50px;
+    -fx-font-family: "Roboto Light";
+    -fx-alignment: center;
+}
+
+#manageCoursesImagePane {
+    -fx-background-image: url("../images/undraw_file_manager_j85s.png");
+    -fx-background-position: center;
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+}
+
+#manageStudentsImagePane {
+    -fx-background-image: url("../images/undraw_personal_info_0okl.png");
+    -fx-background-position: center;
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+}
+
+#manageProfessorsImagePane {
+    -fx-background-image: url("../images/undraw_quiz_nlyh.png");
+    -fx-background-position: center;
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+}
+
+#manageAdminsImagePane {
+    -fx-background-image: url("../images/undraw_software_engineer_lvl5.png");
+    -fx-background-position: center;
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+}
+
+#manageStudyGroupsImagePane {
+    -fx-background-image: url("../images/undraw_Team_page_re_cffb.png");
+    -fx-background-position: center;
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+}

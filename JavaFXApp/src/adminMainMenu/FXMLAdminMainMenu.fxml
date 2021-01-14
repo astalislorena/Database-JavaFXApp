@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="900.0" prefWidth="1100.0" style="-fx-background-color: #ffffff;" stylesheets="@adminMainMenuStylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adminMainMenu.AdminMainMenuController">
+    <children>
+        <AnchorPane fx:id="anchorPanePages" layoutX="207.0" layoutY="-11.0" prefHeight="905.0" prefWidth="898.0">
+             <children>
+                <Pane fx:id="defaultPane" prefHeight="954.0" prefWidth="929.0" />
+                <Pane fx:id="manageStudentsPane" layoutY="14.0" prefHeight="909.0" prefWidth="898.0" stylesheets="@adminMainMenuStylesheet.css" visible="false">
+               <children>
+                  <TextField fx:id="studentCNPTextField" layoutX="80.0" layoutY="120.0" prefHeight="25.0" prefWidth="214.0" promptText="CNP" />
+                  <TextField fx:id="studentsFirstNameTextField" layoutX="80.0" layoutY="173.0" prefHeight="25.0" prefWidth="214.0" promptText="First Name" />
+                  <TextField fx:id="studentLastNameTextField" layoutX="80.0" layoutY="236.0" prefHeight="25.0" prefWidth="214.0" promptText="Last Name" />
+                  <TextField fx:id="studentPasswordTextField" layoutX="80.0" layoutY="302.0" prefHeight="25.0" prefWidth="214.0" promptText="Password" />
+                  <TextField fx:id="studentIBANTextField" layoutX="80.0" layoutY="361.0" prefHeight="25.0" prefWidth="214.0" promptText="IBAN" />
+                  <TextField fx:id="studentEmailTextField" layoutX="80.0" layoutY="424.0" prefHeight="25.0" prefWidth="214.0" promptText="Email Address" />
+                  <Label fx:id="manageStudentsLabel" layoutX="80.0" layoutY="26.0" text="Student profile" />
+                  <TextField fx:id="studentTelephoneNumberTextField" layoutX="80.0" layoutY="482.0" prefHeight="25.0" prefWidth="214.0" promptText="Telephone Number" />
+                  <TextField fx:id="studentContactNumberTextField" layoutX="80.0" layoutY="536.0" prefHeight="25.0" prefWidth="214.0" promptText="Contact Number" />
+                  <Button fx:id="searchStudentByCNPButton" layoutX="318.0" layoutY="120.0" mnemonicParsing="false" onAction="#searchStudentByCNP" prefHeight="25.0" prefWidth="110.0" text="Search by CNP" />
+                  <TextField fx:id="studentAddressTextField" layoutX="80.0" layoutY="588.0" prefHeight="25.0" prefWidth="214.0" promptText="Address" />
+                  <Button fx:id="studentSearchByNameButton" layoutX="318.0" layoutY="154.0" mnemonicParsing="false" onAction="#getStudentByName" prefHeight="25.0" prefWidth="110.0" text="Search by name" />
+                  <Button fx:id="studentModifyDataButton" layoutX="318.0" layoutY="186.0" mnemonicParsing="false" onAction="#updateStudent" prefHeight="25.0" prefWidth="110.0" text="Modify data" />
+                  <Button fx:id="studentDeleteButton" layoutX="318.0" layoutY="217.0" mnemonicParsing="false" onAction="#deleteStudent" prefHeight="25.0" prefWidth="110.0" text="Delete student" />
+                  <Pane fx:id="manageStudentsImagePane" layoutX="365.0" layoutY="408.0" prefHeight="449.0" prefWidth="465.0" />
+                  <Button fx:id="addStudentButton" layoutX="318.0" layoutY="249.0" mnemonicParsing="false" onAction="#addStudent" prefHeight="25.0" prefWidth="110.0" text="Add student" />
+                  <Button fx:id="studentClearDataButton" layoutX="318.0" layoutY="290.0" mnemonicParsing="false" onAction="#clearStudentData" prefHeight="25.0" prefWidth="110.0" text="Clear" />
+               </children></Pane>
+            <Pane fx:id="manageProfessorsPane" layoutX="6.0" layoutY="7.0" prefHeight="923.0" prefWidth="898.0" stylesheets="@adminMainMenuStylesheet.css" visible="false">
+               <children>
+                  <TextField fx:id="professorCNPTextField" layoutX="84.0" layoutY="166.0" prefHeight="25.0" prefWidth="214.0" promptText="CNP" />
+                  <TextField fx:id="professorFirstNameTextField" layoutX="84.0" layoutY="216.0" prefHeight="25.0" prefWidth="214.0" promptText="First Name" />
+                  <TextField fx:id="professorLastNameTextField" layoutX="84.0" layoutY="266.0" prefHeight="25.0" prefWidth="214.0" promptText="Last Name" />
+                  <TextField fx:id="professorPasswordTextField" layoutX="84.0" layoutY="327.0" prefHeight="25.0" prefWidth="214.0" promptText="Password" />
+                  <TextField fx:id="professorIBANTextField" layoutX="84.0" layoutY="385.0" prefHeight="25.0" prefWidth="214.0" promptText="IBAN" />
+                  <TextField fx:id="professorEmailTextField" layoutX="84.0" layoutY="437.0" prefHeight="25.0" prefWidth="214.0" promptText="Email Address" />
+                  <Label fx:id="manageProfessorsLabel" layoutX="84.0" layoutY="70.0" text="Professor profile" />
+                  <TextField fx:id="professorTelephoneNumberTextField" layoutX="84.0" layoutY="486.0" prefHeight="25.0" prefWidth="214.0" promptText="Telephone Number" />
+                  <TextField fx:id="professorContactNumberTextField" layoutX="84.0" layoutY="536.0" prefHeight="25.0" prefWidth="214.0" promptText="Contact Number" />
+                  <Button fx:id="searchProfessorByCNPButton" layoutX="329.0" layoutY="166.0" mnemonicParsing="false" onAction="#searchProfessorByCNP" prefHeight="25.0" prefWidth="110.0" text="Search by CNP" />
+                  <TextField fx:id="professorAddressTextField" layoutX="84.0" layoutY="588.0" prefHeight="25.0" prefWidth="214.0" promptText="Address" />
+                  <Button fx:id="searchProfessorByNameButton" layoutX="329.0" layoutY="204.0" mnemonicParsing="false" onAction="#getProfessorByName" prefHeight="25.0" prefWidth="110.0" text="Search by name" />
+                  <Button fx:id="professorModifyDataButton" layoutX="329.0" layoutY="241.0" mnemonicParsing="false" onAction="#updateProfessor" prefHeight="25.0" prefWidth="110.0" text="Modify data" />
+                  <Button fx:id="professorDeleteButton" layoutX="329.0" layoutY="279.0" mnemonicParsing="false" onAction="#deleteProfessor" prefHeight="25.0" prefWidth="110.0" text="Delete professor" />
+                  <Button fx:id="addProfessorButton" layoutX="329.0" layoutY="315.0" mnemonicParsing="false" onAction="#addProfessor" prefHeight="25.0" prefWidth="110.0" text="Add professor" />
+                  <Pane fx:id="manageProfessorsImagePane" layoutX="391.0" layoutY="499.0" prefHeight="389.0" prefWidth="448.0" />
+                  <Button fx:id="professorClearDataButton" layoutX="329.0" layoutY="352.0" mnemonicParsing="false" onAction="#clearProfessorData" prefHeight="25.0" prefWidth="110.0" text="Clear" />
+                  <TextField fx:id="professorDepartmentTextField" layoutX="84.0" layoutY="641.0" prefHeight="25.0" prefWidth="214.0" promptText="Department" />
+               </children>
+            </Pane>
+            <Pane fx:id="manageAdminsPane" layoutX="-3.0" layoutY="12.0" prefHeight="930.0" prefWidth="904.0" stylesheets="@adminMainMenuStylesheet.css" visible="false">
+               <children>
+                  <TextField fx:id="adminCNPTextField" layoutX="107.0" layoutY="176.0" prefHeight="25.0" prefWidth="214.0" promptText="CNP" />
+                  <TextField fx:id="adminFirstNameTextField" layoutX="107.0" layoutY="230.0" prefHeight="25.0" prefWidth="214.0" promptText="First Name" />
+                  <TextField fx:id="adminLastNameTextField" layoutX="107.0" layoutY="284.0" prefHeight="25.0" prefWidth="214.0" promptText="Last Name" />
+                  <TextField fx:id="adminPasswordTextField" layoutX="107.0" layoutY="338.0" prefHeight="25.0" prefWidth="214.0" promptText="Password" />
+                  <TextField fx:id="adminIBANTextField" layoutX="107.0" layoutY="388.0" prefHeight="25.0" prefWidth="214.0" promptText="IBAN" />
+                  <TextField fx:id="adminEmailTextField" layoutX="107.0" layoutY="440.0" prefHeight="25.0" prefWidth="214.0" promptText="Email Address" />
+                  <Label fx:id="manageAdminsLabel" layoutX="107.0" layoutY="93.0" text="Admin profile" />
+                  <TextField fx:id="adminTelephoneNumberTextField" layoutX="107.0" layoutY="498.0" prefHeight="25.0" prefWidth="214.0" promptText="Telephone Number" />
+                  <TextField fx:id="adminContactNumberTextField" layoutX="107.0" layoutY="553.0" prefHeight="25.0" prefWidth="214.0" promptText="Contact Number" />
+                  <Button fx:id="searchAdminByCNPButton" layoutX="354.0" layoutY="176.0" mnemonicParsing="false" onAction="#searchAdminByCNP" prefHeight="25.0" prefWidth="110.0" text="Search by CNP" />
+                  <TextField fx:id="adminAddressTextField" layoutX="107.0" layoutY="610.0" prefHeight="25.0" prefWidth="214.0" promptText="Address" />
+                  <Button fx:id="searchAdminByNameButton" layoutX="353.0" layoutY="218.0" mnemonicParsing="false" onAction="#searchAdminByName" prefHeight="25.0" prefWidth="110.0" text="Search by name" />
+                  <Button fx:id="adminModifyDataButton" layoutX="354.0" layoutY="259.0" mnemonicParsing="false" onAction="#updateAdmin" prefHeight="25.0" prefWidth="110.0" text="Modify data" />
+                  <Button fx:id="adminDeleteButton" layoutX="353.0" layoutY="297.0" mnemonicParsing="false" onAction="#deleteAdmin" prefHeight="25.0" prefWidth="110.0" text="Delete admin" />
+                  <Button fx:id="addAdminButton" layoutX="353.0" layoutY="338.0" mnemonicParsing="false" onAction="#addAdmin" prefHeight="25.0" prefWidth="110.0" text="Add admin" />
+                  <Pane fx:id="manageAdminsImagePane" layoutX="372.0" layoutY="476.0" prefHeight="389.0" prefWidth="475.0" />
+                  <CheckBox fx:id="isSuperadminCheckBox" layoutX="107.0" layoutY="671.0" mnemonicParsing="false" text="is superadmin" />
+                  <Button fx:id="clearAdminDataButton" layoutX="353.0" layoutY="376.0" mnemonicParsing="false" onAction="#clearAdminData" prefHeight="25.0" prefWidth="110.0" text="Clear" />
+                  <Label fx:id="notSuperadminTextBox" layoutX="547.0" layoutY="149.0" prefHeight="17.0" prefWidth="167.0" />
+               </children>
+            </Pane>
+            <Pane fx:id="manageCoursesPane" layoutX="-3.0" layoutY="-5.0" prefHeight="948.0" prefWidth="910.0" stylesheets="@adminMainMenuStylesheet.css" visible="false">
+               <children>
+                  <Label fx:id="manageCoursesLabel" layoutX="89.0" layoutY="37.0" text="Course" />
+                  <TextField fx:id="courseNameTextField" layoutX="89.0" layoutY="152.0" prefHeight="25.0" prefWidth="214.0" promptText="Course Name" />
+                  <TextField fx:id="maxNrOfStudentsTextField" layoutX="89.0" layoutY="208.0" prefHeight="25.0" prefWidth="214.0" promptText="Maximum number of students" />
+                  <TextArea fx:id="courseDescriptionTextArea" layoutX="89.0" layoutY="259.0" prefHeight="83.0" prefWidth="214.0" promptText="Course description" />
+                  <TextField fx:id="courseIdTextField" layoutX="89.0" layoutY="110.0" prefHeight="25.0" prefWidth="214.0" promptText="Course ID " />
+                  <Button fx:id="serachCourseByNameButton" layoutX="329.0" layoutY="152.0" mnemonicParsing="false" onAction="#searchCourseByName" text="Search by name" />
+                  <Button fx:id="modifyCourseDataButton" layoutX="329.0" layoutY="202.0" mnemonicParsing="false" onAction="#updateCourse" prefHeight="25.0" prefWidth="100.0" text="Modify data" />
+                  <Button fx:id="deleteCourseButton" layoutX="329.0" layoutY="259.0" mnemonicParsing="false" onAction="#deleteCourse" prefHeight="25.0" prefWidth="100.0" text="Delete course" />
+                  <Button fx:id="addCourseButton" layoutX="329.0" layoutY="310.0" mnemonicParsing="false" onAction="#addCourse" prefHeight="25.0" prefWidth="100.0" text="Add course" />
+                  <Pane fx:id="manageCoursesImagePane" layoutX="162.0" layoutY="389.0" prefHeight="405.0" prefWidth="542.0" />
+               </children>
+            </Pane>
+            <Pane fx:id="manageStudyGroupsPane" layoutX="-3.0" layoutY="1.0" prefHeight="954.0" prefWidth="920.0" stylesheets="@adminMainMenuStylesheet.css" visible="false">
+               <children>
+                  <Label fx:id="manageStudyGroupsLabel" layoutX="45.0" layoutY="87.0" text="Study group" />
+                  <TextField fx:id="studyGroupForCourseTextField" layoutX="45.0" layoutY="178.0" prefHeight="25.0" prefWidth="214.0" promptText="Course ID " />
+                  <Button fx:id="searchCourseByID" layoutX="335.0" layoutY="178.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="126.0" text="Search" />
+                  <Button fx:id="deleteStudyGroupButton" layoutX="335.0" layoutY="221.0" mnemonicParsing="false" onAction="#deleteStudyGroup" prefHeight="25.0" prefWidth="126.0" text="Delete study group" />
+                  <Button fx:id="addStudyGroupButton" layoutX="336.0" layoutY="260.0" mnemonicParsing="false" onAction="#addStudyGroup" prefHeight="25.0" prefWidth="126.0" text="Add study group" />
+                  <Pane fx:id="manageStudyGroupsImagePane" layoutX="55.0" layoutY="312.0" prefHeight="542.0" prefWidth="810.0" />
+                  <TextField layoutX="45.0" layoutY="221.0" prefHeight="25.0" prefWidth="214.0" promptText="Professor CNP (optional)" />
+                  <TextField fx:id="doesCourseHaveStudyGroupTextField" layoutX="45.0" layoutY="260.0" prefHeight="25.0" prefWidth="214.0" promptText="Study Group name" />
+               </children>
+            </Pane>
+             </children>
+        </AnchorPane>
+        <Pane prefHeight="908.0" prefWidth="207.0" stylesheets="@adminMainMenuStylesheet.css">
+            <children>
+                <Button layoutX="3.0" layoutY="174.0" mnemonicParsing="false" onAction="#manageStudents" prefHeight="46.0" prefWidth="202.0" styleClass="buttons" text="Manage students" />
+                <Button layoutX="3.0" layoutY="220.0" mnemonicParsing="false" onAction="#manageProfessors" prefHeight="46.0" prefWidth="202.0" styleClass="buttons" text="Manage professors" />
+                <Button layoutX="3.0" layoutY="312.0" mnemonicParsing="false" onAction="#manageAdmins" prefHeight="46.0" prefWidth="202.0" styleClass="buttons" text="Manage admins" />
+                <Button layoutX="3.0" layoutY="266.0" mnemonicParsing="false" onAction="#manageCourses" prefHeight="46.0" prefWidth="202.0" styleClass="buttons" text="Manage courses" />
+                <Button layoutX="3.0" layoutY="358.0" mnemonicParsing="false" onAction="#manageStudyGroups" prefHeight="46.0" prefWidth="202.0" styleClass="buttons" text="Manage study groups" />
+                <Button layoutX="3.0" layoutY="404.0" mnemonicParsing="false" onAction="#logout" prefHeight="46.0" prefWidth="202.0" styleClass="buttons" text="Logout" />
+                <Pane fx:id="iconPane" layoutX="-14.0" prefHeight="175.0" prefWidth="207.0" />
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>
