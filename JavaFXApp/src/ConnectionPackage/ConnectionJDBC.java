@@ -8,7 +8,7 @@ public class ConnectionJDBC {
     String URL = "jdbc:mysql://localhost:3306/";
     String DB_NAME =  "universitydatabase";
     String USER = "root";
-    String PASSWORD = "Darius7510";
+    String PASSWORD = "iipMda13**";
 
     public boolean validate_user(String email, String password) {
         Connection c;
